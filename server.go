@@ -11,7 +11,7 @@ import (
 	datastar "github.com/starfederation/datastar/sdk/go"
 )
 
-func Index(w http.ResponseWriter, r *http.Request) {
+func index(w http.ResponseWriter, r *http.Request) {
 
 	tmpl := template.Must(template.ParseFiles("index.html"))
 
@@ -46,7 +46,7 @@ func main() {
 	// port to serve on
 	port := "3000"
 
-	http.HandleFunc("GET /", Index)
+	http.HandleFunc("GET /", index)
 	http.HandleFunc("GET /feed", feed)
 
 	fmt.Printf("Server starting: http://127.0.0.1:%s \n", port)
