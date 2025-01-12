@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <title> Datastar </title>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@v1.0.0-beta.1/bundles/datastar.js"></script>
+</head>
+<body style="background-color:#FFFFFF" data-signals-show="true">
+    <h1> Datastar </h1>
+    <h2> A live stream of random UUIDs sent from the server </h2>
+
+    <br> <br>
+
+    <div>
+        <p>This button action is entirely client side</p>
+        <button data-on-click="$show=!$show">Show or Hide Live Stream</button> 
+        <br> <br>
+       
+        <div data-show="$show">
+            <p> This feed is almost entirely server side. <br> If you use the button to hide the feed, its still running in the background.</p>
+            <span id="feed" data-on-load="@get('/feed')" style="font-size:30px;color:#0074D9"></span>
+        </div>
+    </div>
+</body>
+</html>
